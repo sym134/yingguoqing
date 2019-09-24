@@ -1,0 +1,421 @@
+<html lang="en" style="opacity: 1; font-size: 26.6666px;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="迎国庆换新颜">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telphone=no,email=no,address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="icon" href="http://qnlite.gtimg.com/qqnewslite/logo.png">
+    <title>迎国庆换新颜</title>
+    <script>
+        !function () {
+            var i = 0;
+            !function e(t) {
+                var n = 40;
+                (document.documentElement.clientWidth !== window.innerWidth || 0 === document.documentElement.clientWidth && 0 === window.innerWidth) && i < 10 ? (document.documentElement.style.opacity = 0, window.setTimeout(e, 0), i++) : (document.documentElement.style.opacity = 0, setTimeout(function () {
+                    var e = 500 < window.innerWidth ? 500 : window.innerWidth;
+                    n = parseInt(e / 750 * 1e4 * 40) / 1e4, document.documentElement.style.opacity = 1, document.documentElement.style.fontSize = n + "px"
+                }, 0))
+            }()
+        }()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link href="src/chunk-nationaldayhead-vendors.0f433423.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="src/r-nationaldayhead.6e9074cf.css">
+    <style type="text/css">
+        .vue-cropper[data-v-6dae58fd] {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            direction: ltr;
+            touch-action: none;
+            text-align: left;
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+        }
+
+        .cropper-box[data-v-6dae58fd],
+        .cropper-box-canvas[data-v-6dae58fd],
+        .cropper-drag-box[data-v-6dae58fd],
+        .cropper-crop-box[data-v-6dae58fd],
+        .cropper-face[data-v-6dae58fd] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            user-select: none;
+        }
+
+        .cropper-box-canvas img[data-v-6dae58fd] {
+            position: relative;
+            text-align: left;
+            user-select: none;
+            transform: none;
+            max-width: none;
+            max-height: none;
+        }
+
+        .cropper-box[data-v-6dae58fd] {
+            overflow: hidden;
+        }
+
+        .cropper-move[data-v-6dae58fd] {
+            cursor: move;
+        }
+
+        .cropper-crop[data-v-6dae58fd] {
+            cursor: crosshair;
+        }
+
+        .cropper-modal[data-v-6dae58fd] {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .cropper-crop-box[data-v-6dae58fd] {
+            /*border: 2px solid #39f;*/
+        }
+
+        .cropper-view-box[data-v-6dae58fd] {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            outline: 1px solid #39f;
+            outline-color: rgba(51, 153, 255, 0.75);
+            user-select: none;
+        }
+
+        .cropper-view-box img[data-v-6dae58fd] {
+            user-select: none;
+            text-align: left;
+            max-width: none;
+            max-height: none;
+        }
+
+        .cropper-face[data-v-6dae58fd] {
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            opacity: 0.1;
+        }
+
+        .crop-info[data-v-6dae58fd] {
+            position: absolute;
+            left: 0px;
+            min-width: 65px;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            font-size: 12px;
+        }
+
+        .crop-line[data-v-6dae58fd] {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .line-w[data-v-6dae58fd] {
+            top: -3px;
+            left: 0;
+            height: 5px;
+            cursor: n-resize;
+        }
+
+        .line-a[data-v-6dae58fd] {
+            top: 0;
+            left: -3px;
+            width: 5px;
+            cursor: w-resize;
+        }
+
+        .line-s[data-v-6dae58fd] {
+            bottom: -3px;
+            left: 0;
+            height: 5px;
+            cursor: s-resize;
+        }
+
+        .line-d[data-v-6dae58fd] {
+            top: 0;
+            right: -3px;
+            width: 5px;
+            cursor: e-resize;
+        }
+
+        .crop-point[data-v-6dae58fd] {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            opacity: 0.75;
+            background-color: #39f;
+            border-radius: 100%;
+        }
+
+        .point1[data-v-6dae58fd] {
+            top: -4px;
+            left: -4px;
+            cursor: nw-resize;
+        }
+
+        .point2[data-v-6dae58fd] {
+            top: -5px;
+            left: 50%;
+            margin-left: -3px;
+            cursor: n-resize;
+        }
+
+        .point3[data-v-6dae58fd] {
+            top: -4px;
+            right: -4px;
+            cursor: ne-resize;
+        }
+
+        .point4[data-v-6dae58fd] {
+            top: 50%;
+            left: -4px;
+            margin-top: -3px;
+            cursor: w-resize;
+        }
+
+        .point5[data-v-6dae58fd] {
+            top: 50%;
+            right: -4px;
+            margin-top: -3px;
+            cursor: e-resize;
+        }
+
+        .point6[data-v-6dae58fd] {
+            bottom: -5px;
+            left: -4px;
+            cursor: sw-resize;
+        }
+
+        .point7[data-v-6dae58fd] {
+            bottom: -5px;
+            left: 50%;
+            margin-left: -3px;
+            cursor: s-resize;
+        }
+
+        .point8[data-v-6dae58fd] {
+            bottom: -5px;
+            right: -4px;
+            cursor: se-resize;
+        }
+
+        @media screen and (max-width: 500px) {
+            .crop-point[data-v-6dae58fd] {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                opacity: 0.45;
+                background-color: #39f;
+                border-radius: 100%;
+            }
+
+            .point1[data-v-6dae58fd] {
+                top: -10px;
+                left: -10px;
+            }
+
+            .point2[data-v-6dae58fd],
+            .point4[data-v-6dae58fd],
+            .point5[data-v-6dae58fd],
+            .point7[data-v-6dae58fd] {
+                display: none;
+            }
+
+            .point3[data-v-6dae58fd] {
+                top: -10px;
+                right: -10px;
+            }
+
+            .point4[data-v-6dae58fd] {
+                top: 0;
+                left: 0;
+            }
+
+            .point6[data-v-6dae58fd] {
+                bottom: -10px;
+                left: -10px;
+            }
+
+            .point8[data-v-6dae58fd] {
+                bottom: -10px;
+                right: -10px;
+            }
+        }
+    </style>
+
+</head>
+<body class="">
+<div id="app">
+    <!--内容-->
+    <template>
+        <div class="wrapper">
+            <!--<img src="" class="img-load" style="width: 9.5rem; position: fixed; top: 0px; left: -9999px;">-->
+            <div class="operation-header">
+                <div class="h-logo"></div>
+                <div class="h-title"></div>
+                <div class="h-slogan"></div>
+            </div>
+            <div class="operation-number">目前已有&nbsp;<span>{{operation_number}}</span>&nbsp;人次参与活动</div>
+            <div class="operation-box">
+                <div class="prev" @click="onPrev"></div>
+                <div class="operation-img">
+                    <div class="cropper-content">
+                        <div data-v-6dae58fd="" class="vue-cropper">
+                            <div data-v-6dae58fd="" class="cropper-box">
+                                <div data-v-6dae58fd="" class="cropper-box-canvas"
+                                     style="width: 0px; height: 0px; transform: scale(1, 1) translate3d(0px, 0px, 0px) rotateZ(0deg); display: none;">
+                                    <img data-v-6dae58fd="" src="" alt="cropper-img">
+                                </div>
+                                <!--相框-->
+                                <img :src="frame_image" class="frame-image"
+                                     id="FrameImage">
+                            </div>
+                            <div data-v-6dae58fd="" class="cropper-drag-box cropper-move"></div>
+                            <div data-v-6dae58fd="" class="cropper-crop-box"
+                                 style="width: 0px; height: 0px; transform: translate3d(0px, 0px, 0px); display: none;">
+                            <span data-v-6dae58fd="" class="cropper-view-box">
+                                <img data-v-6dae58fd="" src="" alt="cropper-img"
+                                     style="width: 0px; height: 0px; transform: scale(1, 1) translate3d(0px, 0px, 0px) rotateZ(0deg);"></span>
+                                <span data-v-6dae58fd="" class="cropper-face cropper-move"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="next" @click="onNext"></div>
+            </div>
+            <div class="operation-btns">
+                <div class="o-btn o-btn2"></div>
+            </div>
+
+            <div v-if="show_popup" class="van-overlay" style="z-index: 2000;"></div>
+
+            <!--调整图片大小-->
+            <div class="van-popup van-popup--top" style="z-index: 2001; display: none;">
+                <div class="first-tips">
+                    <img src="src/img/20190906-pointer.png" alt="pointer" class="center-bg animated pulse">
+                    <img src="src/img/20190906-arrow.png" class="top-arrow animated right-top">
+                    <img src="src/img/20190906-arrow.png" class="bottom-arrow animated left-btm">
+                </div>
+                <div class="first-text">可直接调整图片哦~</div>
+            </div>
+
+            <!--生成二维码-->
+            <div v-if="show_popup" class="van-popup van-popup--top long-press"
+                 style="position:fixed;left: 0;right: 0;margin: 40% auto 0;z-index: 20001">
+                <div class="l-img">
+                    <img :src="saveImage" alt="">
+                </div>
+                <div class="first-text" style="color: #333">可直接调整图片哦~</div>
+            </div>
+
+
+        </div>
+    </template>
+    <canvas id="demoCanvas" style="display: none"></canvas>
+</div>
+
+<script src="https://unpkg.com/axios@0.19.0/dist/axios.min.js"></script>
+<script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script>
+    var v = new Vue({
+        el: '#app',
+        data: {
+            frame_image: 'src/img/head1.png',
+            index: 1,
+            operation_number: 9999, // 使用数量
+            avatar: 'src/img/0.jpeg', // 头像
+            saveImage: '',
+            show_popup: false
+        },
+        methods: {
+            onPrev() {
+                if (this.index > 1) {
+                    this.index--;
+                    this.frame_image = 'src/img/head' + this.index + '.png';
+                }
+            },
+            onNext() {
+                if (this.index < 4) {
+                    this.index++;
+                    this.frame_image = 'src/img/head' + this.index + '.png';
+                }
+            },
+            makeImage() {
+                let canvasDom = document.getElementById("demoCanvas");
+                canvasDom.width = 1125;
+                canvasDom.height = 1125;
+                let context = canvasDom.getContext("2d");
+                let avatar, photo_frame;
+                photo_frame = avatar = new Image();
+                photo_frame.src = this.frame_image;
+                avatar.src = this.avatar;
+                let _this = this;
+                avatar.onload = function () {
+                    context.drawImage(avatar, 0, 0, 1125, 1125);
+                    context.drawImage(photo_frame, 0, 0, 1125, 1125);
+                    _this.saveImage = context.canvas.toDataURL('image/png');
+                    context.canvas.toDataURL('image/png')
+                    _this.show_popup = true;
+                }
+            },
+            getInfo() {
+                let _this = this;
+                axios.defaults.baseURL = 'http://rl.inews.qq.com';  //你的接口地址
+                axios({
+                    url: '/taf/user',
+                    method: 'get',
+                    withCredentials: true,
+                })
+                    .then(function (response) {
+                        console.log(response);
+                        _this.avatar = response.data.HeadUrl;// 头像
+
+                        // 微信分享
+                        _this.wx(response.data.wx);  // 分享数据  20190906-icon2.png本地的分享图标
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            },
+            wx(data) {
+                wx.config({
+                    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                    appId: data.appId, // 必填，公众号的唯一标识
+                    timestamp: data.timestamp, // 必填，生成签名的时间戳
+                    nonceStr: data.nonceStr, // 必填，生成签名的随机串
+                    signature: data.signature,// 必填，签名
+                    jsApiList: [] // 必填，需要使用的JS接口列表
+                });
+                wx.ready(function () {
+                    wx.updateAppMessageShareData(data.share)
+                    wx.updateTimelineShareData(data.share)
+                });
+            }
+        },
+        create() {
+            this.getInfo();
+        }
+    })
+</script>
+</body>
+</html>
