@@ -281,13 +281,11 @@
                     <div class="cropper-content">
                         <div data-v-6dae58fd="" class="vue-cropper">
                             <div data-v-6dae58fd="" class="cropper-box">
-                                <div data-v-6dae58fd="" class="cropper-box-canvas"
-                                     style="width: 0px; height: 0px; transform: scale(1, 1) translate3d(0px, 0px, 0px) rotateZ(0deg); display: none;">
-                                    <img data-v-6dae58fd="" src="" alt="cropper-img">
+                                <div data-v-6dae58fd="" class="cropper-box-canvas">
+                                    <img style="width: 100%" :src="avatar" alt="cropper-img">
                                 </div>
                                 <!--相框-->
-                                <img :src="frame_image" class="frame-image"
-                                     id="FrameImage">
+                                <img :src="frame_image" class="frame-image" id="FrameImage">
                             </div>
                             <div data-v-6dae58fd="" class="cropper-drag-box cropper-move"></div>
                             <div data-v-6dae58fd="" class="cropper-crop-box"
@@ -303,10 +301,10 @@
                 <div class="next" @click="onNext"></div>
             </div>
             <div class="operation-btns">
-                <div class="o-btn o-btn2"></div>
+                <div @click="makeImage" class="o-btn o-btn2"></div>
             </div>
 
-            <div v-if="show_popup" class="van-overlay" style="z-index: 2000;"></div>
+            <div v-if="show_popup" @click="show_popup=false" class="van-overlay" style="z-index: 2000;"></div>
 
             <!--调整图片大小-->
             <div class="van-popup van-popup--top" style="z-index: 2001; display: none;">
@@ -350,14 +348,19 @@
             onPrev() {
                 if (this.index > 1) {
                     this.index--;
-                    this.frame_image = 'src/img/head' + this.index + '.png';
+                } else {
+                    this.index = 4
                 }
+                this.frame_image = 'src/img/head' + this.index + '.png';
+
             },
             onNext() {
                 if (this.index < 4) {
                     this.index++;
-                    this.frame_image = 'src/img/head' + this.index + '.png';
+                } else {
+                    this.index = 1
                 }
+                this.frame_image = 'src/img/head' + this.index + '.png';
             },
             makeImage() {
                 let canvasDom = document.getElementById("demoCanvas");
@@ -365,7 +368,8 @@
                 canvasDom.height = 1125;
                 let context = canvasDom.getContext("2d");
                 let avatar, photo_frame;
-                photo_frame = avatar = new Image();
+                photo_frame = new Image();
+                avatar = new Image();
                 photo_frame.src = this.frame_image;
                 avatar.src = this.avatar;
                 let _this = this;
@@ -373,7 +377,6 @@
                     context.drawImage(avatar, 0, 0, 1125, 1125);
                     context.drawImage(photo_frame, 0, 0, 1125, 1125);
                     _this.saveImage = context.canvas.toDataURL('image/png');
-                    context.canvas.toDataURL('image/png')
                     _this.show_popup = true;
                 }
             },

@@ -5,6 +5,10 @@
 只是纯前端，后端接口执行编写，总之就是获取用户头像
 比较蛋疼的就是无意间看到了一个接口
 
-#https://rl.inews.qq.com/taf/user
+### [https://rl.inews.qq.com/taf/user](https://rl.inews.qq.com/taf/user)
 
 骚年可以复制到微信打开，你会发现授权返回的信息已json格式全部暴露，大厂的心果然大！！！！
+本来是想者跨域试试，这样后端都不用了，接口磕死在门口了……这方面又经验的可以试试！！！
+
+### 效果图：
+https://github.com/sym134/yingguoqing/blob/master/WX20190924-171656.png
