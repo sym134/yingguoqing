@@ -11,4 +11,5 @@
 本来是想者跨域试试，这样后端都不用了，接口磕死在门口了……这方面又经验的可以试试！！！
 
 ### 效果图：
-https://github.com/sym134/yingguoqing/blob/master/WX20190924-171656.png
+![Image text](https://raw.githubusercontent.com/sym134/yingguoqing/master/WX20190924-174838.png)
+![Image text](https://raw.githubusercontent.com/sym134/yingguoqing/master/WX20190924-175055.png)
